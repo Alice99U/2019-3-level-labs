@@ -23,7 +23,7 @@ class CrawlerTestCase(unittest.TestCase):
         url = 'https://ria.ru/world/'
         html_page = crawler.get_html_page(url)
         articles = crawler.find_articles(html_page)
-        self.assertEqual(articles["articles"][0]['title'] == '', False)
+        self.assertEqual(articles[0] == '', False)
 
     def test_checkUrl(self):
         url = 'https://ria.ru/world/'
