@@ -2,6 +2,7 @@ import unittest
 import json
 import requests
 import HTML_Crawler as crawler
+from HTML_Crawler import articles
 
 
 class CrawlerTestCase(unittest.TestCase):
@@ -20,9 +21,6 @@ class CrawlerTestCase(unittest.TestCase):
         self.assertEqual(data['articles'][0]['title'] == '', False)
 
     def test_checkPage(self):
-        url = 'https://ria.ru/world/'
-        html_page = crawler.get_html_page(url)
-        articles = crawler.find_articles(html_page)
         self.assertEqual(articles[0] == '', False)
 
     def test_checkUrl(self):
