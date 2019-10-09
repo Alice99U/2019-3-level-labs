@@ -1,4 +1,4 @@
-import request as parser
+import HTML_Crawler as parser
 from flask import Flask, render_template
 import json
 
@@ -7,15 +7,15 @@ server = Flask(__name__)
 
 @server.route('/')
 def main():
-    url = 'Наука - BBC News Русская служба.html'
+    url = 'https://ria.ru/world/'
     html_page = parser.get_html_page(url)
     articles = parser.find_articles(html_page)
-    json_file_path = parser.publish_report('/Users/articles.json', articles)  # returns file's path
-    file = open(json_file_path, encoding='UTF-8')
+    json_file_path = parser.publish_report('./articles.json', url,  articles)  # returns file's path
+    file = open('./articles.json', encoding='UTF-8')
     json_string = file.read()
     file.close()
     dictionary_json = json.loads(json_string)
-    return render_template('list_of_articles.html', data=dictionary_json)
+    return render_template('html_template.html', data=dictionary_json)
 
 
 if __name__ == '__main__':
