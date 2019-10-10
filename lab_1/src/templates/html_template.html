@@ -8,10 +8,16 @@
 <h1>В мире</h1>
 <ol>
 {% for article in data.articles %}
-<li>{{ article['title'] }}</li>
+<li>{{ article['title'] }}
+    (
+    {% for author in data.articles[0].authors %}
+        {{ author }},
+    {% endfor %}
+    )
+</li>
 {% endfor %}
 </ol>
-<p><b>Источник:</b> <a href = ""> {{data.url}} </a> </p>
+<p><b>Источник:</b> <a href = "{{data.url}}" target="_blank"> {{data.url}} </a> </p>
 <p><b>Дата:</b> {{data.creationDate}}</p>
 </body>
 </html>

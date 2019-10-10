@@ -24,11 +24,13 @@ def find_articles(html_page):
 
 
 def publish_report(path, url, articles):
-    date0 = str(date(2019, 9, 26))
-    articles0 = [{'title': i} for i in articles]
+    date0 = datetime.now()
+    date1 = str(date0.date())
+    authors = ['Aaaa', 'Bbbb', 'Rrrr']
+    articles0 = [{'title': i, 'authors': authors} for i in articles]
     data = {
                 "url": url,
-                "creationDate": date0,
+                "creationDate": date1,
                 "articles": articles0
             }
     with open(path, "w", encoding="utf-8") as file:

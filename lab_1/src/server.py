@@ -10,7 +10,7 @@ def main():
     url = 'https://ria.ru/world/'
     html_page = parser.get_html_page(url)
     articles = parser.find_articles(html_page)
-    json_file_path = parser.publish_report('./articles.json', url,  articles)  # returns file's path
+    json_file_path = parser.publish_report('./articles.json', url,  articles)
     file = open('./articles.json', encoding='UTF-8')
     json_string = file.read()
     file.close()

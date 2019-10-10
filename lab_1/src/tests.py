@@ -1,6 +1,7 @@
 import unittest
 import json
 import requests
+from datetime import datetime, date
 import HTML_Crawler as crawler
 from HTML_Crawler import articles
 
@@ -16,9 +17,15 @@ class CrawlerTestCase(unittest.TestCase):
         fh = open('articles.json', 'r')
         data = json.load(fh)
         fh.close()
+        date0 = datetime.now()
+        date1 = str(date0.date())
         self.assertEqual(data['url'] == '', False)
         self.assertEqual(data['articles'] == '', False)
-        self.assertEqual(data['articles'][0]['title'] == '', False)
+        for i in data['articles']:
+            self.assertEqual(i['title'] == '', False)
+        self.assertEqual(data['articles'][0]['authors'] == '', False)
+        self.assertEqual(data['creationDate'] == '', False)
+        self.assertEqual(data['creationDate'] == date1, True)
 
     def test_checkPage(self):
         self.assertEqual(articles[0] == '', False)
