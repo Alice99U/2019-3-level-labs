@@ -1,1 +1,1 @@
-web: gunicorn webs:app
+web: gunicorn lab1/src/server:server
