@@ -26,8 +26,7 @@ def find_articles(html_page):
 def publish_report(path, url, articles):
     date0 = datetime.now()
     date1 = str(date0.date())
-    authors = ['Aaaa', 'Bbbb', 'Rrrr']
-    articles0 = [{'title': i, 'authors': authors} for i in articles]
+    articles0 = [{'title': i} for i in articles]
     data = {
                 "url": url,
                 "creationDate": date1,
