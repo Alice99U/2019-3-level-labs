@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Alice\Documents\2019-3-level-labs\venv"
+VIRTUAL_ENV="C:\Users\Alice\Pictures\2019-3-level-labs\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
