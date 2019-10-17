@@ -23,7 +23,6 @@ class CrawlerTestCase(unittest.TestCase):
         self.assertEqual(data['articles'] == '', False)
         for i in data['articles']:
             self.assertEqual(i['title'] == '', False)
-        self.assertEqual(data['articles'][0]['authors'] == '', False)
         self.assertEqual(data['creationDate'] == '', False)
         self.assertEqual(data['creationDate'] == date1, True)
 
