@@ -27,7 +27,8 @@ def refresh():
 @server.route('/print_date')
 def print_date():
     date0 = datetime.now()
-    print(date0)
+    print(date0.strftime("%x"))
+    print(date0.strftime("%X"))
     return redirect(url_for('main'))
 
 
