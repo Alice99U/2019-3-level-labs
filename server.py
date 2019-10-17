@@ -1,5 +1,6 @@
 import HTML_Crawler as parser
 from flask import Flask, render_template, redirect, url_for
+from datetime import datetime, date
 import json
 
 server = Flask(__name__)
@@ -20,6 +21,13 @@ def main():
 
 @server.route('/refresh_page', methods=['POST'])
 def refresh():
+    return redirect(url_for('main'))
+
+
+@server.route('/print_date')
+def print_date():
+    date0 = datetime.now()
+    print(date0)
     return redirect(url_for('main'))
 
 

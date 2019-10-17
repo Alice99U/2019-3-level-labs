@@ -7,10 +7,10 @@ import json
 
 def get_html_page(url):
     news_request = requests.get(url)
-    if news_request.status_code == 200:
-        print('Yay! We performed a successfull request')
-    else:
-        print('Oops! Something went wrong...')
+    #if news_request.status_code == 200:
+     #   print('Yay! We performed a successfull request')
+    #else:
+     #   print('Oops! Something went wrong...')
     content = news_request.text
     return content
 
@@ -39,7 +39,7 @@ def publish_report(path, url, articles):
 url = 'https://ria.ru/world/'
 html_page = get_html_page(url)
 articles = find_articles(html_page)
-print(articles)
+#print(articles)
 path = './articles.json'
 publish_report(path, url, articles)
 

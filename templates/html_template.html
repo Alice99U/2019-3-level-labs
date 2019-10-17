@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>В мире</h1>
-<form method="post" action="/refresh_page">
-    <button type="submit">Refresh</button>
+<a href="/refresh_page"><button type="submit">Refresh</button></a>
+<a href="/print_date"><button type="submit">Date</button></a>
 <ol>
 {% for article in data.articles %}
 <li>{{ article['title'] }}
